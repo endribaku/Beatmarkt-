@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="/css/styles.css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
-            </style>
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
     </head>
 
     <body>
@@ -49,12 +51,23 @@
             <div class="search-filter">
                 <input class="search-bar" type="search" placeholder="        Search for beats">
                 <div class="filters">
-                    <button type="button" class="genre-filter">
-                        <div>Filter by Genre <img src="/images/chevron down.png" height="10px"></div>
-                    </button>
-                    <button type="button" class="bpm-filter">
-                        <div>Filter by BPM <img src="/images/chevron down.png" height="10px"></div>
-                    </button>
+                    <div class="genre-dropdown">
+                        <button type="button" class="genre-filter">
+                            <div>Filter by Genre <img class="genre-filter-image" src="/images/chevron down.png" height="10px"></div>
+                        </button>
+                    </div>
+    
+                    <div class="bpm-dropdown">
+                        <button type="button" class="bpm-filter">
+                            <div>Filter by BPM <img src="/images/chevron down.png" height="10px" class="bpm-filter-image"></div>
+                        </button>
+                        <!-- <div class="bpm-specifier">
+                            <input type="text" placeholder="0" class="bpm-from">
+                            <div class="to">to</div>
+                            <input type="text" placeholder="0" class="bpm-to">
+                        </div> -->
+                        
+                    </div>                
                 </div>
             </div>
 
@@ -105,4 +118,7 @@
     
 
     </body>
+    
+    
+    <script src="/javascript/javascript.js"></script>
 </html>
