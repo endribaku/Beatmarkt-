@@ -14,10 +14,224 @@ function Track(image, title, track_length, bpm, price, tag1, tag2, tag3, genre) 
 
 
 // Genre and BPM filters
-let Genres = [ "Hip-hop", "Pop", "R&B", "Rock", 
+let Genres = [ "Hip-hop", "Trap", "Pop", "R&B", "Rock", 
                 "Electronic", "Reggae", "Country", 
                 "World", "Drill", "Hyperpop", 
                 "Lo-fi", "Neo Soul"];
+
+
+
+// All tracks content
+
+let img1 = new Image();
+img1.src = "/images/beat-images/sandman.webp";
+let img2 = new Image();
+img2.src = "/images/beat-images/nomads.webp";
+let img3 = new Image();
+img3.src = "/images/beat-images/letmedown.webp";
+let img4 = new Image();
+img4.src = "/images/beat-images/longtalk.webp";
+let img5 = new Image();
+img5.src = "/images/beat-images/misery.png";
+let img6 = new Image();
+img6.src = "/images/beat-images/supervention.webp";
+let img7 = new Image();
+img7.src = "/images/beat-images/jersey.webp";
+let img8 = new Image();
+img8.src = "/images/beat-images/smoke.webp";
+
+
+let tracklistArray = [];
+
+
+let track1 = new Track(img1.src, "SANDMAN (BUY 2 GET 1 FREE)", "2:12", 
+    "96", "$19.95", "utopia", "asap rocky", undefined, "Trap");
+tracklistArray.push(track1);
+
+let track2 = new Track(img2.src, "NOMADS (BUY 2 GET 1 FREE)", 
+    "3:06", "136", "$19.95", "kendrick lamar", "baby keem", "kodak black", "Trap");
+tracklistArray.push(track2);
+
+let track3 = new Track(img3.src, "LET ME DOWN (BUY 2 GET 1 FREE)", "3:05", 
+    "166", "$19.95", "ty dolla sign", "vultures", "kanye west", "Hip-hop");
+tracklistArray.push(track3);
+
+let track4 = new Track(img4.src, "LONG TALK (BUY 2 GET 1 FREE)", "3:18", 
+    "145", "$19.95", "soul", "pray for paris", "westside gunn", "Hip-hop");
+tracklistArray.push(track4);
+
+let track5 = new Track(img5.src, "MISERY (BUY 2 GET 1 FREE", "3:22", 
+    "152", "$19.95", "playboi carti", "wlr", "rage", "Rock");
+tracklistArray.push(track5);
+
+let track6 = new Track(img6.src, "SUPERVENTION (BUY 2 GET 1 FREE)", "3:40", 
+    "125", "$19.95", "clams casino", "asap rocky", "ambient", "Lo-fi");
+tracklistArray.push(track6);
+
+let track7 = new Track(img7.src, "JERSEY (BUY 2 GET 1 FREE)", "3:47", "114", 
+    "$19.95", "drake", "honestly nevermind", "dance", "Electronic");
+tracklistArray.push(track7);
+
+let track8 = new Track(img8.src, "SMOKE (BUY 2 GET 1 FREE)", "3:08", "121", "$19.95", 
+    "travis scott", "travis scott utopia", "kanye west", "Trap");
+tracklistArray.push(track8);
+
+
+
+
+// tracklist creator
+function createTracklist(tracklistArray) {
+    let tracklist = document.querySelector(".track-list");
+    
+
+    // Info for each track
+    tracklistArray.forEach( (track) => {
+        let trackInfo = document.createElement("div");
+        trackInfo.classList.add("track-info");
+        tracklist.appendChild(trackInfo);
+        
+        let trackImage = document.createElement("div");
+        trackImage.classList.add("track-image");
+        trackImage.style.backgroundImage = `url(${track.image})`;
+        trackImage.style.backgroundSize = 'contain';
+        trackInfo.appendChild(trackImage);
+
+        let trackData = document.createElement("div");
+        trackData.classList.add("track-data");
+        trackInfo.appendChild(trackData);
+
+        let trackNameTags = document.createElement("div");
+        trackNameTags.classList.add("track-name-tags");
+        trackData.appendChild(trackNameTags);
+
+        let trackName = document.createElement("div");
+        trackName.classList.add("track-title");
+        trackName.textContent = track.title;
+        trackNameTags.appendChild(trackName);
+
+        let trackTags = document.createElement("div");
+        trackTags.classList.add("track-tag");
+        trackNameTags.appendChild(trackTags);      
+        if(track.tag1 != undefined) {
+            
+            let tag1 = document.createElement("div");
+            tag1.classList.add("tag1");
+            trackTags.appendChild(tag1);
+
+            let tagText = document.createElement("div");
+            tagText.classList.add("tag-text");
+            tagText.textContent = track.tag1;
+            
+            let hashimg = document.createElement("img");
+            hashimg.src = "/images/hash icon.png";
+
+            tag1.appendChild(hashimg);
+            tag1.appendChild(tagText);
+        }
+        if(track.tag2 != undefined) {
+            let tag2 = document.createElement("div");
+            tag2.classList.add("tag2");
+            trackTags.appendChild(tag2);
+
+            let tagText = document.createElement("div");
+            tagText.classList.add("tag-text");
+            tagText.textContent = track.tag2;
+            
+            let hashimg = document.createElement("img");
+            hashimg.src = "/images/hash icon.png";
+
+            tag2.appendChild(hashimg);
+            tag2.appendChild(tagText);
+        }
+        if(track.tag3 != undefined) {
+            let tag3 = document.createElement("div");
+            tag3.classList.add("tag3");
+            trackTags.appendChild(tag3);
+
+            let tagText = document.createElement("div");
+            tagText.classList.add("tag-text");
+            tagText.textContent = track.tag3;
+            
+            let hashimg = document.createElement("img");
+            hashimg.src = "/images/hash icon.png";
+
+            tag3.appendChild(hashimg);
+            tag3.appendChild(tagText);
+        }
+
+        let trackDetails = document.createElement("div");
+        trackDetails.classList.add("track-details");
+        trackData.appendChild(trackDetails);
+            let trackLength = document.createElement("div");
+            trackLength.classList.add("track-length");
+            trackDetails.appendChild(trackLength);
+            
+            let textLength = document.createElement("div");
+            textLength.classList.add("text-length");
+            textLength.textContent = "Length";
+            trackLength.appendChild(textLength);
+            let detailValue = document.createElement("div");
+            detailValue.classList.add("detail-value");
+            detailValue.textContent = track.tracklength;
+            trackLength.appendChild(detailValue);
+            
+            
+            let trackBpm = document.createElement("div");
+            trackBpm.classList.add("track-bpm");
+            trackDetails.appendChild(trackBpm);
+
+            let bpm = document.createElement("div");
+            bpm.classList.add("bpm-value");
+            bpm.textContent = "BPM";
+            trackBpm.appendChild(bpm);
+            let bpmValue = document.createElement("div");
+            bpmValue.classList.add("detail-value");
+            bpmValue.textContent = track.bpm;
+            trackBpm.appendChild(bpmValue);
+
+            let trackButtons = document.createElement("div");
+            trackButtons.classList.add("track-buttons");
+            trackDetails.appendChild(trackButtons);
+
+            let downloadButton = document.createElement("button");
+            downloadButton.type = "button";
+            downloadButton.classList.add("download-button");
+            let downloadImage = document.createElement("img");
+            downloadImage.src = "/images/download-icon.png";
+            downloadButton.appendChild(downloadImage);
+            trackButtons.appendChild(downloadButton);
+            let shareButton = document.createElement("button");
+            shareButton.type = "button";
+            shareButton.classList.add("share-button");
+            let shareButtonImage = document.createElement("img");
+            shareButtonImage.src = "/images/download-icon.png";
+            shareButton.appendChild(shareButtonImage);
+            trackButtons.appendChild(shareButton);
+            let buyButton = document.createElement("button");
+            buyButton.type = "button";
+            buyButton.classList.add("buy-button");
+            let buyButtonImage = document.createElement("img");
+            buyButtonImage.classList.add("buy-icon");
+            buyButtonImage.src = "/images/shopping-cart.png";
+            let buyButtonPrice = document.createElement("div");
+            buyButtonPrice.classList.add("buy-price");
+            buyButtonPrice.textContent = track.price;
+            trackButtons.appendChild(buyButton);
+            buyButton.appendChild(buyButtonImage);
+            buyButton.appendChild(buyButtonPrice);
+
+    })
+}
+
+createTracklist(tracklistArray);
+
+
+
+
+
+
+
+
 
 
 
@@ -42,7 +256,6 @@ function addGenreDropdownList() {
 
     //style
     dropDownMenu.style.height = "160px";
-
     dropDownMenu.style.position = "absolute";
     dropDownMenu.style.width = "120px";
     
@@ -82,10 +295,26 @@ function addGenreDropdownList() {
         dropDownGenre.addEventListener("mouseleave", () => {
             dropDownGenre.style.color = "#585860";
         })
+        dropDownGenre.addEventListener("click", () => {
+            let tracklist = document.querySelector(".track-list");
+            let allTracks = document.querySelectorAll(".track-info");
+            allTracks = Array.from(allTracks);
+            let newTracklistArray = tracklistArray.filter((track) => {
+               return track.genre == dropDownGenre.textContent;
+            } );
+            allTracks.forEach((track) => {
+                tracklist.removeChild(track);
+            });
+            createTracklist(newTracklistArray);
+        })
     })
+
+    
     
     dropDownContent.addEventListener("click", removeMenu);
     genre_filter.addEventListener("click", removeMenu); 
+
+
 }
 
 
@@ -100,6 +329,7 @@ function removeBpmRange() {
 
 
 function addBpmRange() {
+    
 
     let bpm_specifier = document.createElement("div");
     bpm_specifier.classList.add("bpm-specifier");
@@ -124,14 +354,78 @@ function addBpmRange() {
     to_range.type = "text";
     to_range.placeholder = "300";
     to_range.classList.add("bpm-to");
+    to_range.value = "300";
 
     bpm_specifier.appendChild(to_range);
 
     bpm_filter.removeEventListener("click", addBpmRange);
     bpm_filter.addEventListener("click", removeBpmRange);
 
+    // from_range.addEventListener("change", (e) => {
+    //     let tracklist = document.querySelector(".track-list");
+    //     let allTracks = document.querySelectorAll(".track-info");
+        
+    //     allTracks = Array.from(allTracks);
+    //     let newTracklistArray = tracklistArray.filter( (track) => {
+    //         return ((track.bpm >= Number(e.target.value)) && (track.bpm <= Number(to_range.value)));
+    //     })
+    //     allTracks.forEach((track) => {
+    //         tracklist.removeChild(track);
+    //     });
+    //     createTracklist(newTracklistArray);
+    // })
 
+    // to_range.addEventListener("change", (e) => {
+    //     let tracklist = document.querySelector(".track-list");
+    //     let allTracks = document.querySelectorAll(".track-info");
+        
+    //     allTracks = Array.from(allTracks);
+    //     let newTracklistArray = tracklistArray.filter( (track) => {
+    //         return ((track.bpm >= from_range.value) && (track.bpm <= Number(e.target.value)));
+    //     })
+    //     allTracks.forEach((track) => {
+    //         tracklist.removeChild(track);
+    //     });
+    //     createTracklist(newTracklistArray);
+    // })
 }
+
+function searchBarFilter() {
+    let tracklist = document.querySelector(".track-list");
+    let allTracks = document.querySelectorAll(".track-info");
+    allTracks = Array.from(allTracks);
+    let word = search_bar.value;
+    word = Array.from(word);
+
+    let newTracklistArray = tracklistArray.filter( (track) => {
+        let yes = false;
+        let trackname = Array.from(track.title);
+        for(let i = 0; i < word.length; i++) {
+            if(word[i].toUpperCase() == trackname[i].toUpperCase()) {
+                yes = true;
+            } else {
+                yes = false;
+                break;
+            }
+        }
+        return yes;
+    });
+    
+    allTracks.forEach((track) => {
+        tracklist.removeChild(track);
+    });
+    createTracklist(newTracklistArray);
+    
+}
+
+
+
+
+
+
+
+
+
 
 // event listener
 let filter = document.querySelector(".genre-dropdown");
@@ -141,5 +435,12 @@ genre_filter.addEventListener("click", addGenreDropdownList);
 
 let bpm_filter = document.querySelector(".bpm-filter-image");
 bpm_filter.addEventListener("click", addBpmRange);
+
+let search_bar = document.querySelector(".search-bar");
+search_bar.addEventListener("change", searchBarFilter);
+
+
+
+
 
 
