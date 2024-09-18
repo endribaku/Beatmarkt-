@@ -204,7 +204,7 @@ function createTracklist(tracklistArray) {
             shareButton.type = "button";
             shareButton.classList.add("share-button");
             let shareButtonImage = document.createElement("img");
-            shareButtonImage.src = "/images/download-icon.png";
+            shareButtonImage.src = "/images/share icon.png";
             shareButton.appendChild(shareButtonImage);
             trackButtons.appendChild(shareButton);
             let buyButton = document.createElement("button");
@@ -361,33 +361,34 @@ function addBpmRange() {
     bpm_filter.removeEventListener("click", addBpmRange);
     bpm_filter.addEventListener("click", removeBpmRange);
 
-    // from_range.addEventListener("change", (e) => {
-    //     let tracklist = document.querySelector(".track-list");
-    //     let allTracks = document.querySelectorAll(".track-info");
+    from_range.addEventListener("change", () => {
+        let tracklist = document.querySelector(".track-list");
+        let allTracks = document.querySelectorAll(".track-info");
         
-    //     allTracks = Array.from(allTracks);
-    //     let newTracklistArray = tracklistArray.filter( (track) => {
-    //         return ((track.bpm >= Number(e.target.value)) && (track.bpm <= Number(to_range.value)));
-    //     })
-    //     allTracks.forEach((track) => {
-    //         tracklist.removeChild(track);
-    //     });
-    //     createTracklist(newTracklistArray);
-    // })
+        allTracks = Array.from(allTracks);
+        let newTracklistArray = tracklistArray.filter( (track) => {
+            return ((track.bpm >= Number(from_range.value)) && (track.bpm <= Number(to_range.value)));
+        })
+        allTracks.forEach((track) => {
+            tracklist.removeChild(track);
+        });
+        createTracklist(newTracklistArray);
+    })
+    
 
-    // to_range.addEventListener("change", (e) => {
-    //     let tracklist = document.querySelector(".track-list");
-    //     let allTracks = document.querySelectorAll(".track-info");
+    to_range.addEventListener("change", () => {
+        let tracklist = document.querySelector(".track-list");
+        let allTracks = document.querySelectorAll(".track-info");
         
-    //     allTracks = Array.from(allTracks);
-    //     let newTracklistArray = tracklistArray.filter( (track) => {
-    //         return ((track.bpm >= from_range.value) && (track.bpm <= Number(e.target.value)));
-    //     })
-    //     allTracks.forEach((track) => {
-    //         tracklist.removeChild(track);
-    //     });
-    //     createTracklist(newTracklistArray);
-    // })
+        allTracks = Array.from(allTracks);
+        let newTracklistArray = tracklistArray.filter( (track) => {
+            return ((track.bpm >= Number(from_range.value)) && (track.bpm <= Number(to_range.value)));
+        })
+        allTracks.forEach((track) => {
+            tracklist.removeChild(track);
+        });
+        createTracklist(newTracklistArray);
+    })
 }
 
 function searchBarFilter() {
@@ -438,6 +439,9 @@ bpm_filter.addEventListener("click", addBpmRange);
 
 let search_bar = document.querySelector(".search-bar");
 search_bar.addEventListener("change", searchBarFilter);
+
+
+
 
 
 
