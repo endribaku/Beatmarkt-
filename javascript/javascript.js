@@ -24,21 +24,21 @@ let Genres = [ "Hip-hop", "Trap", "Pop", "R&B", "Rock",
 // All tracks content
 
 let img1 = new Image();
-img1.src = "/images/beat-images/sandman.webp";
+img1.src = "../images/beat-images/sandman.webp";
 let img2 = new Image();
-img2.src = "/images/beat-images/nomads.webp";
+img2.src = "../images/beat-images/nomads.webp";
 let img3 = new Image();
-img3.src = "/images/beat-images/letmedown.webp";
+img3.src = "../images/beat-images/letmedown.webp";
 let img4 = new Image();
-img4.src = "/images/beat-images/longtalk.webp";
+img4.src = "../images/beat-images/longtalk.webp";
 let img5 = new Image();
-img5.src = "/images/beat-images/misery.png";
+img5.src = "../images/beat-images/misery.png";
 let img6 = new Image();
-img6.src = "/images/beat-images/supervention.webp";
+img6.src = "../images/beat-images/supervention.webp";
 let img7 = new Image();
-img7.src = "/images/beat-images/jersey.webp";
+img7.src = "../images/beat-images/jersey.webp";
 let img8 = new Image();
-img8.src = "/images/beat-images/smoke.webp";
+img8.src = "../images/beat-images/smoke.webp";
 
 
 let tracklistArray = [];
@@ -123,7 +123,7 @@ function createTracklist(tracklistArray) {
             tagText.textContent = track.tag1;
             
             let hashimg = document.createElement("img");
-            hashimg.src = "/images/hash icon.png";
+            hashimg.src = "../images/hash icon.png";
 
             tag1.appendChild(hashimg);
             tag1.appendChild(tagText);
@@ -138,7 +138,7 @@ function createTracklist(tracklistArray) {
             tagText.textContent = track.tag2;
             
             let hashimg = document.createElement("img");
-            hashimg.src = "/images/hash icon.png";
+            hashimg.src = "../images/hash icon.png";
 
             tag2.appendChild(hashimg);
             tag2.appendChild(tagText);
@@ -153,7 +153,7 @@ function createTracklist(tracklistArray) {
             tagText.textContent = track.tag3;
             
             let hashimg = document.createElement("img");
-            hashimg.src = "/images/hash icon.png";
+            hashimg.src = "../images/hash icon.png";
 
             tag3.appendChild(hashimg);
             tag3.appendChild(tagText);
@@ -197,14 +197,14 @@ function createTracklist(tracklistArray) {
             downloadButton.type = "button";
             downloadButton.classList.add("download-button");
             let downloadImage = document.createElement("img");
-            downloadImage.src = "/images/download-icon.png";
+            downloadImage.src = "../images/download-icon.png";
             downloadButton.appendChild(downloadImage);
             trackButtons.appendChild(downloadButton);
             let shareButton = document.createElement("button");
             shareButton.type = "button";
             shareButton.classList.add("share-button");
             let shareButtonImage = document.createElement("img");
-            shareButtonImage.src = "/images/share icon.png";
+            shareButtonImage.src = "../images/share icon.png";
             shareButton.appendChild(shareButtonImage);
             trackButtons.appendChild(shareButton);
             let buyButton = document.createElement("button");
@@ -212,7 +212,7 @@ function createTracklist(tracklistArray) {
             buyButton.classList.add("buy-button");
             let buyButtonImage = document.createElement("img");
             buyButtonImage.classList.add("buy-icon");
-            buyButtonImage.src = "/images/shopping-cart.png";
+            buyButtonImage.src = "../images/shopping-cart.png";
             let buyButtonPrice = document.createElement("div");
             buyButtonPrice.classList.add("buy-price");
             buyButtonPrice.textContent = track.price;
