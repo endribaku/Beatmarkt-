@@ -89,7 +89,7 @@ function createTracklist(tracklistArray) {
         let trackInfo = document.createElement("div");
         trackInfo.classList.add("track-info");
         tracklist.appendChild(trackInfo);
-        
+          
         let trackImage = document.createElement("div");
         trackImage.classList.add("track-image");
         trackImage.style.backgroundImage = `url(${track.image})`;
@@ -220,7 +220,30 @@ function createTracklist(tracklistArray) {
             buyButton.appendChild(buyButtonImage);
             buyButton.appendChild(buyButtonPrice);
 
+            //Add Event Listener
+            trackInfo.addEventListener("mouseenter", () => {
+                trackInfo.classList.add("selectedTrack");
+                
+                let playImage = document.createElement("img");
+                playImage.classList.add("playImage");
+                playImage.src = "../images/player-play.svg";
+                
+                trackImage.classList.add("selectedTrackImage");
+                
+                trackImage.appendChild(playImage);
+               
+                trackInfo.addEventListener("mouseleave", () => {
+                    trackInfo.classList.remove("selectedTrack");
+                    trackImage.classList.remove("selectedTrackImage");
+                    trackImage.removeChild(playImage);
+                });
+                
+
+            })
+
     })
+
+    
 }
 
 createTracklist(tracklistArray);
@@ -418,6 +441,12 @@ function searchBarFilter() {
     createTracklist(newTracklistArray);
     
 }
+
+function createTrackPlayer() {
+
+};
+
+
 
 
 

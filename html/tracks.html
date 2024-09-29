@@ -55,13 +55,13 @@
                 <div class="filters">
                     <div class="genre-dropdown">
                         <button type="button" class="genre-filter">
-                            <div>Filter by Genre <img class="genre-filter-image" src="../images/chevron down.png" height="10px"></div>
+                            <div>Filter by Genre <img class="genre-filter-image" src="../images/chevron down.svg" height="10px"></div>
                         </button>
                     </div>
     
                     <div class="bpm-dropdown">
                         <button type="button" class="bpm-filter">
-                            <div>Filter by BPM <img src="../images/chevron down.png" height="10px" class="bpm-filter-image"></div>
+                            <div>Filter by BPM <img src="../images/chevron down.svg" height="10px" class="bpm-filter-image"></div>
                         </button>
                         <!-- <div class="bpm-specifier">
                             <input type="text" placeholder="0" class="bpm-from">
@@ -117,8 +117,40 @@
                     </div>
                 </div>
             </div> -->
+             </div>
         </div>
+        <div class="track-playback">
+            <div class="track-captions">
+                <div class="audio-image">
+                    <img src="../images/beat-images/sandman.webp" class="audio-image-link">
+                </div>
+                <div class="track-names">
+                    <div class="track-name">SANDMAN (BUY 2 GET 1 FREE)</div>
+                    <div class="track-creator">endribaku</div>
+                </div>
+            </div>
+            <div class="track-audio">
+                
+                <div class="audio-buttons">
+                    <button class="repeat"> <img src="../images/repeating.svg"></button>
+                    <button class="skip-back"> <img src="../images/skip-back.svg"></button>
+                    <button class="pause"> <img src="../images/pause.svg"> </button>
+                    <button class="skip-forward"> <img src="../images/skip-forward.svg"></button>
+                    <button class="shuffling"> <img src="../images/shuffling.svg"> </button>
+                </div>
 
+                <div class="track-timelength">
+                    <div class="current-time">0:00</div>
+                    <input type="range" class="time-slider" min="0" max="100">
+                    <div class="track-time">3:14</div>
+                </div>
+            </div>
+
+            <div class="audio-customization">
+                <img src="../images/volume.png">
+                <input type="range" class="volume-slider" min="0" max="100">
+            </div>
+        </div>
 
     
 

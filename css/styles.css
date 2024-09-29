@@ -23,14 +23,14 @@ body {
     justify-content: space-between;
     padding: 8px 96px;
     flex-wrap: wrap;
-    flex-shrink: 0;
+    flex-shrink: 1;
     
 }
 
 nav {
     display: flex;
     justify-content: flex-start;
-    flex-shrink: 0;
+    flex-shrink: 1;
     flex-wrap: wrap;
 }
 
@@ -147,7 +147,7 @@ a {
     font-family:"Figtree";
     font-weight: 500;
     font-size: 12px;
-    background-image: url(/images/search\ icon.png);
+    background-image: url(../images/search\ icon.png);
     background-repeat: no-repeat;
     background-position: 10px 10px;
     flex-basis: 320px;
@@ -195,6 +195,7 @@ a {
     display: flex;
     flex-shrink: 1;
     flex-wrap: wrap;
+    margin-bottom: 8px;
 
 }
 
@@ -358,4 +359,176 @@ a {
 
 .to {
     color: #585860;
+}
+
+
+.selectedTrack {
+    background-color: #2F2F2F;
+    cursor: grabbing;
+}
+
+.selectedTrackImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playImage {
+    overflow: hidden;
+    height: 60px;
+    width: 60px;
+    fill: white;
+    position: absolute;
+}
+
+.track-playback {
+    background: #17181A;
+    border-top: 1px solid #22242B;
+    box-shadow: 0px 0px 64px 0px #00000080;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 100px;
+}
+
+.audio-image-link {
+    width: 48px;
+    height:48px;
+    gap: 0px;
+    border-radius: 12px;
+    border: 1px;
+    opacity: 0px;
+}
+
+.track-captions {
+    display:flex;
+    gap: 16px;
+    font-weight: 600px;
+    font-size: 15px;
+    line-height: 18px;
+    align-items: center;
+}
+
+.track-names {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 6px;
+    flex-basis: 219px;
+    
+}
+
+.track-creator {
+    font-weight: 500;
+    color: #61636D;
+}
+
+.audio-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.repeat,
+.skip-back,
+.pause,
+.skip-forward,
+.shuffling {
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    
+}
+
+.skip-back,
+.pause,
+.skip-forward {
+    border: 1px solid #2D2E33;
+    border-radius: 999px;
+}
+
+.pause {
+    background: #8000FF;
+    border: 1px solid #A245FF;
+}
+
+
+.skip-back,
+.skip-forward {
+    background: #1F2025;
+}
+
+.repeat,
+.shuffling {
+    background: transparent;
+    border: 0px;
+}
+
+.track-timelength {
+    display: flex;
+    align-items: center;
+}
+
+.current-time, 
+.track-time {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: #61636D;
+
+}
+
+.time-slider,
+.volume-slider {
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.volume-slider::-ms-fill-lower, 
+.time-slider::-ms-fill-lower {
+    background-color: #8000FF;
+}
+
+.volume-slider::-webkit-slider-runnable-track,
+.time-slider::-webkit-slider-runnable-track {
+    background-color: #61636D;
+    height: 6px;
+    border-radius: 6px;
+    
+    
+}
+
+.volume-slider::-moz-range-track,
+.time-slider::-moz-range-track {
+    background-color: #61636D;
+    height: 6px;
+    border-radius: 6px;
+}
+
+.volume-slider::-webkit-slider-thumb, 
+.time-slider::-webkit-slider-thumb {
+    appearance: none; 
+    -webkit-appearance: none; 
+}
+
+.track-audio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.time-slider {
+    min-width: 512px;
+};
+
+.volume-slider {
+    min-width: 128px;
+}
+
+.audio-customization {
+    display: flex;
+    align-items: center;
 }
